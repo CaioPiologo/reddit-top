@@ -9,6 +9,7 @@ import {
   selectCount,
 } from './counterSlice';
 import styles from './Counter.module.css';
+import { Button } from '@material-ui/core';
 
 export function Counter() {
   const count = useSelector(selectCount);
@@ -20,13 +21,13 @@ export function Counter() {
   return (
     <div>
       <div className={styles.row}>
-        <button
+        <Button
           className={styles.button}
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
         >
           -
-        </button>
+        </Button>
         <span className={styles.value}>{count}</span>
         <button
           className={styles.button}
