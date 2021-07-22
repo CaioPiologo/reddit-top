@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
-import './App.css';
+import RedditTop from './pages/Top';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
+        {/* Ideally this would be behind a Router component */}
+        <RedditTop />
       </header>
     </div>
   );
