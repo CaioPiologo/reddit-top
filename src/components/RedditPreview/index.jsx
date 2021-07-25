@@ -36,7 +36,7 @@ const RedditPreview = (props) => {
         subheader={currentTimeAgo}
       />
       <CardContent>
-        <Typography variant="h4" color="text" component="p">
+        <Typography variant="h4" color="textPrimary" component="p">
           {data.title}
         </Typography>
         <CardMedia

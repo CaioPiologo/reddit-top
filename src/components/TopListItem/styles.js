@@ -38,6 +38,14 @@ const styles = (theme) => ({
   inline: {
     display: 'inline',
   },
+  footer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+  },
+  comments: {
+    color: theme.palette.warning.dark,
+  },
 });
 
 export default styles;

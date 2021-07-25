@@ -76,9 +76,19 @@ const TopListItem = (props) => {
                 {data.title}
               </Typography>
             </CardContent>
-            <Button size="small" color="primary" onClick={onClickRemovePost}>
-              Remove Post
-            </Button>
+            <div className={classes.footer}>
+              <Button size="small" color="primary" onClick={onClickRemovePost}>
+                Remove Post
+              </Button>
+              <Typography
+                variant="subtitle1"
+                color="textPrimary"
+                component="p"
+                className={classes.comments}
+              >
+                {data.num_comments} comments
+              </Typography>
+            </div>
           </CardActionArea>
         </Card>
       </Slide>
