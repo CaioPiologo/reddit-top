@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchTop } from '../api/reddit';
+import { fetchTop } from '../../api/reddit';
 
 const initialState = {
   rawData: {},
