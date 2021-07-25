@@ -64,7 +64,7 @@ const TopListItem = (props) => {
                   width: data.thumbnail_width,
                   height: data.thumbnail_height,
                 }}
-                image={data.thumbnail}
+                image={data.thumbnail !== 'image' ? data.thumbnail : data.url}
                 title={data.title}
               />
               <Typography

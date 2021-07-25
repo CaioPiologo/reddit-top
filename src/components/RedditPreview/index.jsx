@@ -41,9 +41,12 @@ const RedditPreview = (props) => {
         </Typography>
         <CardMedia
           component={data.is_video ? 'video' : 'img'}
-          image={data.url}
+          image={
+            data.is_video ? data.media.reddit_video.fallback_url : data.url
+          }
           title={data.title}
-          autoPlay
+          controls={data.is_video}
+          autoPlay={data.is_video}
         />
       </CardContent>
     </Card>
