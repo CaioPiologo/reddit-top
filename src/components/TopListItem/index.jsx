@@ -21,7 +21,7 @@ import styles from './styles';
 const useStyles = makeStyles(styles);
 
 const TopListItem = (props) => {
-  const { post, postPosition } = props;
+  const { post, postPosition, onClick } = props;
   const { data } = post;
   const [removed, setRemoved] = useState(false);
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const TopListItem = (props) => {
   if (!post.visible) return null;
   const currentTimeAgo = timeAgo(data.created);
 
-  const onClick = () => {
+  const onClickRemovePost = () => {
     setRemoved(true);
     setTimeout(() => {
       dispatch(removePost({ entryPos: postPosition }));
@@ -45,7 +45,10 @@ const TopListItem = (props) => {
     >
       <Slide direction="left" in={!removed} mountOnEnter unmountOnExit>
         <Card className={classes.card}>
-          <CardActionArea className={classes.actionArea}>
+          <CardActionArea
+            className={classes.actionArea}
+            onClick={() => onClick(postPosition)}
+          >
             <CardHeader
               className={classes.cardHeader}
               classes={{
@@ -73,7 +76,7 @@ const TopListItem = (props) => {
                 {data.title}
               </Typography>
             </CardContent>
-            <Button size="small" color="primary" onClick={onClick}>
+            <Button size="small" color="primary" onClick={onClickRemovePost}>
               Remove Post
             </Button>
           </CardActionArea>
@@ -86,6 +89,7 @@ const TopListItem = (props) => {
 TopListItem.propTypes = {
   post: PropTypes.object.isRequired,
   postPosition: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default TopListItem;

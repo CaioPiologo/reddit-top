@@ -9,7 +9,7 @@ import styles from './styles';
 const useStyles = makeStyles(styles);
 
 const TopList = (props) => {
-  const { topData } = props;
+  const { topData, clickPost } = props;
   const classes = useStyles();
 
   const renderList = () =>
@@ -18,7 +18,7 @@ const TopList = (props) => {
 
       return (
         <>
-          <TopListItem post={post} postPosition={i} />
+          <TopListItem post={post} postPosition={i} onClick={clickPost} />
           <Divider variant="inset" component="li" />
         </>
       );
@@ -29,6 +29,7 @@ const TopList = (props) => {
 
 TopList.propTypes = {
   topData: PropTypes.array,
+  clickPost: PropTypes.func.isRequired,
 };
 TopList.defaultProps = {
   topData: [],
